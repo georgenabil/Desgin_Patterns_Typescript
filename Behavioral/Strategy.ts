@@ -30,7 +30,7 @@ class Context {
     console.log(
       "Context: Sorting data using the strategy (not sure how it'll do it)"
     );
-    const result = this.strategy.doAlgorithm(["a", "b", "c", "d", "e"]);
+    const result = this.strategy.doAlgorithm(["a", "b", "d", "c", "e"]);
     console.log(result.join(","));
 
     // ...
@@ -53,6 +53,11 @@ class ConcreteStrategyB implements Strategy {
   }
 }
 
+class ConcreteStrategyC implements Strategy {
+  public doAlgorithm(data: string[]): string[] {
+    return data.slice();
+  }
+}
 /**
  * The client code picks a concrete strategy and passes it to the context. The
  * client should be aware of the differences between strategies in order to make
